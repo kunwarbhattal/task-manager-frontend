@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# 🗂️ Task Manager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and user-friendly frontend application for managing tasks, built with React.  
+This project serves as the “face” of a full Task Manager system: viewing, creating, editing and tracking tasks through an intuitive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Project Overview  
+This frontend app enables users to:  
+- Log in / authenticate (assuming backend supports it)  
+- View a dashboard of tasks and summary of status  
+- Create new tasks, edit existing ones, assign tasks to users  
+- See task lists (and possibly filters by status, user, due date)  
+- Enjoy a clean, modern UI optimized for productivity  
 
-## React Compiler
+This project pairs with a backend API (REST or GraphQL) which handles user authentication, task data storage, and business logic.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tech Stack  
+**Frontend:**  
+- React.js  
+- React Router (for routing between views)  
+- Axios (or Fetch) for HTTP requests  
+- CSS / Styled-Components / Tailwind (depending on your choice)  
+- Context or Redux (for state management)  
+- Possibly UI libraries (e.g., Material-UI, Ant Design)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Other Considerations:**  
+- JWT token handling for authentication (if used)  
+- Environment variables for API endpoints  
+- Responsive design to support desktop & mobile  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ⚙️ Getting Started  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites  
+- Node.js (v14+ recommended)  
+- npm or yarn  
+- A running backend service (API) to connect to  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Setup & Installation  
+1. Clone this repo  
+   ```bash
+   git clone https://github.com/kunwarbhattal/task-manager-frontend.git
+   cd task-manager-frontend
